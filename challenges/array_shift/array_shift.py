@@ -1,4 +1,6 @@
 def insert_shift_array(input_list, element):
+    """Find the middle of a list and add the element to it there
+    """
     if (len(input_list) % 2) == 0:
         mid = (len(input_list) // 2)
     else:
@@ -16,9 +18,3 @@ def insert_shift_array(input_list, element):
             counter_old += 1
     return new_list
     
-
-
-# test = [4,8,15,23,42]
-# element = 7
-# print([4,8,15,7,23,42])
-# insert_shift_array(test, element)
