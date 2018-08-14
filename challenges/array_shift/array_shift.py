@@ -1,22 +1,24 @@
 def insert_shift_array(input_list, element):
-    mid = (len(arr) // 2) - 1
+    if (len(input_list) % 2) == 0:
+        mid = (len(input_list) // 2)
+    else:
+         mid = (len(input_list) // 2) + 1
+
     new_list = []
-    counter_new = 0
     counter_old = 0
-	while counter_old < len(arr):
-		if counter_old == mid:
-			new_list[counter_new] = element
+    
+    while counter_old < len(input_list):
+        if counter_old == mid:
+            new_list  += [element]
             mid = -1
-            counter_new += 1
         else:
-            new_list[counter_new] = counter_old
-            counter_new += 1
+            new_list  += [input_list[counter_old]]
             counter_old += 1
     return new_list
-    print(new_list)
+    
 
 
-test = [1, 2, 3]
-element = 7
-
-insert_shift_array(test, element)
+# test = [4,8,15,23,42]
+# element = 7
+# print([4,8,15,7,23,42])
+# insert_shift_array(test, element)
