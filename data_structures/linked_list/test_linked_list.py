@@ -56,4 +56,4 @@ def test_includes_returns_true_if_exists(small_list):
 
 def test_includes_returns_false_if_not_exists(small_list):
     assert small_list.find_node(100) is False
-# #     assert small_list.includes(0) is False
+    assert small_list.includes(0) is False

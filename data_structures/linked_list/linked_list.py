@@ -31,12 +31,8 @@ class LinkedList(object):
         """
         self.head = Node(val, self.head)
         self._length += 1
+        return self.head.val
 
-
-
-    # def includes(self, val: str, data: int) -> bool:
-    # def find(self, val):
-        
     def find_node(self, val):
         """Linked List method which returns the first matching node, else None
         """
@@ -48,3 +44,8 @@ class LinkedList(object):
             current = current._next
         
         return False
+
+
+    # def includes(self, val: str, data: int) -> bool:
+    # def find(self, val):
+        
