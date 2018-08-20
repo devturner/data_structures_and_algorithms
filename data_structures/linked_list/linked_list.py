@@ -2,15 +2,15 @@ from .node import Node
 
 
 class LinkedList(object):
-    def __init__(self, iterable=None):
+    def __init__(self):
         self.head = None
         self._length: int = 0
 
-        if iterable is None:
-            iterable = []
+        # if iterable is None:
+        #     iterable = []
 
-        for value in iterable:
-            self.insert(value)
+        # for value in iterable:
+        #     self.insert(value)
 
     def __str__(self):
         return f'Head: {self.head} | Length: {self._length}'
@@ -27,22 +27,24 @@ class LinkedList(object):
         return self
 
     def insert(self, val):
-        """new node
         """
+        """
+
         self.head = Node(val, self.head)
         self._length += 1
+
         return self.head.val
 
-    def find_node(self, val):
+    def includes(self, val):
         """Linked List method which returns the first matching node, else None
         """
         current = self.head
-        
-        while current:
+
+        while current is not None:
             if current.val == val:
                 return True
             current = current._next
-        
+
         return False
 
 
