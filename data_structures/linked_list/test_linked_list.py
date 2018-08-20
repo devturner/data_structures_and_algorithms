@@ -1,6 +1,5 @@
-from .linked_list import LinkedList, Node
+from .linked_list import LinkedList
 import pytest
-
 
 @pytest.fixture
 def empty_list():
@@ -9,13 +8,12 @@ def empty_list():
 
 @pytest.fixture
 def small_list():
-    linked_list = LinkedList()
-    linked_list.insert(1)
-    linked_list.insert(2)
-    linked_list.insert(3)
-    linked_list.insert(4)
-    # import pdb; pdb.set_trace()
-    return linked_list
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(4)
+    return ll
 
 
 def test_linked_list_exists():
@@ -48,12 +46,11 @@ def test_length_of_list_increases_on_insertion(empty_list):
 
 
 def test_includes_returns_true_if_exists(small_list):
-    # actual = small_list.find_node(4)
-    assert small_list.find_node(4) is True
-    # assert actual is True
-    # assert small_list.includes(1) is True
+    actual = small_list.includes(4)
+    assert actual is True
+    assert small_list.includes(1) is True
 
 
 def test_includes_returns_false_if_not_exists(small_list):
-    assert small_list.find_node(100) is False
+    assert small_list.includes(100) is False
     assert small_list.includes(0) is False
