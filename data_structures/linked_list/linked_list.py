@@ -35,6 +35,28 @@ class LinkedList(object):
 
         return self.head.val
 
+    def append(self, val):
+        current = self.head
+        while current._next:
+            current = current._next
+        new_node = Node(val)
+        current._next = new_node
+        self._length += 1
+
+    def insert_before(self, v1, v2):
+        current = self.head
+        while current._next.val != v1:
+            current = current._next
+        current._next = Node(v2, current._next)
+        self._length += 1      
+    
+    def insert_after(self, v1, v2):
+        current = self.head
+        while current.val != v1:
+            current = current._next
+        current._next = Node(v2, current._next)
+        self._length += 1
+
     def includes(self, val):
         """Linked List method which returns the first matching node, else None
         """

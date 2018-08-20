@@ -50,7 +50,20 @@ def test_includes_returns_true_if_exists(small_list):
     assert actual is True
     assert small_list.includes(1) is True
 
-
 def test_includes_returns_false_if_not_exists(small_list):
     assert small_list.includes(100) is False
     assert small_list.includes(0) is False
+
+def test_append_adds_node(small_list):
+    small_list.append(45)
+    assert small_list.includes(45) is True
+
+
+def test_insert_after(small_list):
+    small_list.insert_after(2, 77)
+    assert small_list.includes(77) is True
+
+
+def test_insert_before(small_list):
+    small_list.insert_before(2, 77)
+    assert small_list.includes(77) is True
