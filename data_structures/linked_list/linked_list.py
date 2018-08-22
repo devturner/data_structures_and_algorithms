@@ -69,7 +69,19 @@ class LinkedList(object):
 
         return False
 
+    def kth_from_the_end(self, arg):
+        var2 = 0
+        current = self.head
 
-    # def includes(self, val: str, data: int) -> bool:
-    # def find(self, val):
+        while current._next:
+            var2 += 1
+            current = current._next
         
+        front_index = var2 - arg
+        current = self.head
+        while front_index != 0:
+            front_index -= 1
+            current = current._next
+
+        return current.val
+            
