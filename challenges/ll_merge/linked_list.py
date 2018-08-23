@@ -35,7 +35,6 @@ class LinkedList(object):
         return self.head.val
 
     def append(self, val):
-        self.head = Node(val, self.head)
         current = self.head
         while current._next:
             current = current._next
@@ -56,7 +55,7 @@ class LinkedList(object):
             current = current._next
         current._next = Node(v2, current._next)
         self._length += 1
-
+   
     def includes(self, val):
         """Linked List method which returns the first matching node, else None
         """
@@ -85,3 +84,8 @@ class LinkedList(object):
 
         return current.val
             
+    def print_list_nodes_vals(self):
+        current = self.head
+        while current is not None:
+            print(current.val)
+            current = current._next
