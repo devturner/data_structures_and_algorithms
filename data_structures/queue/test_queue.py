@@ -37,6 +37,7 @@ def test_enqueue_of_value_increases_len(empty_queue):
     assert empty_queue.front._next.val == -1
     assert empty_queue.back.val is 'this is that enqueue test'
 
+
 def test_enqueue_of_value_changes_back(empty_queue):
     assert len(empty_queue) == 0
     empty_queue.enqueue(100)
