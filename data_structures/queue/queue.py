@@ -32,18 +32,18 @@ class Queue(object):
         """
         return self._length
 
-    # def __iter__(self):
-    #     if self.front:
-    #         self._current = self.head
-    #     return self
-
-    def enqueue(self, val):
+    def enqueue(self, value):
         """takes any value as an argument and adds that value to the back of the queue
         """
-        if not self.front:
-            self.front = Node(val, self.front)
+        new_node = Node(value)
+        if self.front is None:
+            self.front = new_node
         else:
-            self.back = Node(val, self.back)
+            get_back = self.front
+            while get_back._next:
+                get_back = get_back._next
+            get_back._next = new_node
+            self.back = get_back._next
 
         self._length += 1
 
@@ -51,7 +51,7 @@ class Queue(object):
         """removes & returns the Node at the front of the queue
         """
         old_front = self.front
-        self.front = _next
+        self.front = old_front._next
         self._length -= 1
         return old_front
 
