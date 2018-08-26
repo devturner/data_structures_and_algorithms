@@ -50,8 +50,10 @@ class Queue(object):
     def dequeue(self):
         """removes & returns the Node at the front of the queue
         """
-        old_front = self.front
-        self.front = old_front._next
-        self._length -= 1
-        return old_front
-
+        try:
+            old_front = self.front
+            self.front = old_front._next
+            self._length -= 1
+            return old_front
+        except AttributeError:
+            print('The queue is empty')

@@ -46,6 +46,11 @@ def test_enqueue_of_value_changes_back(empty_queue):
     assert empty_queue.back.val is 'this is that enqueue test'
 
 
+def test_enqueue_error(empty_queue):
+    with pytest.raises(TypeError):
+        empty_queue.enqueue()
+
+
 def test_default_value_of_top(empty_queue):
     assert empty_queue.front is None
 
@@ -57,3 +62,7 @@ def test_dequeue_returns(small_queue):
 def test_dequeue_head(small_queue):
     small_queue.dequeue()
     assert small_queue.front.val == 2
+
+
+def test_dequeue_error(empty_queue):
+    empty_queue.dequeue()
