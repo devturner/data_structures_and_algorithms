@@ -1,7 +1,7 @@
 from .node import Node
 
 class Queue(object):
-    def __init__(self):
+    def __init__(self, iterable=None):
         """ Create a new queue and give it some default values
             top = None
             length = 0
@@ -32,15 +32,19 @@ class Queue(object):
         """
         return self._length
 
-    def __iter__(self):
-        if self.front:
-            self._current = self.head
-        return self
+    # def __iter__(self):
+    #     if self.front:
+    #         self._current = self.head
+    #     return self
 
     def enqueue(self, val):
         """takes any value as an argument and adds that value to the back of the queue
         """
-        self.back = Node(val, self.back)
+        if not self.front:
+            self.front = Node(val, self.front)
+        else:
+            self.back = Node(val, self.back)
+
         self._length += 1
 
     def dequeue(self):

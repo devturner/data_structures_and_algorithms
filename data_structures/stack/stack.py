@@ -1,7 +1,8 @@
 from .node import Node
 
+
 class Stack(object):
-    def __init__(self):
+    def __init__(self, iterable=None):
         """ Create a new stack and give it some default values
             top = None
             length = 0
@@ -39,19 +40,25 @@ class Stack(object):
     def push(self, val):
         """takes any value as an argument and adds that value to the top of the stack
         """
-        self.top = Node(val, self.top)
-        self._length += 1
-        return self.top
+        try:
+            self.top = Node(val, self.top)
+            self._length += 1
+            return self.top
+        except TypeError:
+            print(f'No value was passed')
 
     def pop(self):
         """removes & returns the Node at the top of the stack
         """
-        tmp = self.top
-        self.top = tmp._next
-        tmp._next = None
+        try:
+            tmp = self.top
+            self.top = tmp._next
+            tmp._next = None
 
-        self._length -= 1
-        return tmp.value
+            self._length -= 1
+            return tmp.val
+        except AttributeError:
+            print(f'Can not pop an empty list')
 
     def peek(self):
         """returns the Node at the top of the stack
