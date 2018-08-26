@@ -1,5 +1,6 @@
 from .node import Node
 
+
 class Queue(object):
     def __init__(self, iterable=None):
         """ Create a new queue and give it some default values
