@@ -1,0 +1,12 @@
+[
+  "test_stack.py::test_stack_class_exists",
+  "test_stack.py::test_can_instantiate_empty_stack",
+  "test_stack.py::test_insertion_of_value_increases_len",
+  "test_stack.py::test_default_value_of_top",
+  "test_stack.py::test_value_of_top_with_peek",
+  "test_stack.py::test_length_of_small",
+  "test_stack.py::test_push_empty",
+  "test_stack.py::test_pop_the_top",
+  "test_stack.py::test_pop_returns_tops_value",
+  "test_stack.py::test_pop_on_empty"
+]
