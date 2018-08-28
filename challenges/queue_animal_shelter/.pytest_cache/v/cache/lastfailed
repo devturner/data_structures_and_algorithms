@@ -1,0 +1,4 @@
+{
+  "test_shelter.py::test_dequeue_type_is_front": true,
+  "test_shelter.py::test_dequeue_type_not_front": true
+}

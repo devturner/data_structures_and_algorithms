@@ -1,0 +1,9 @@
+[
+  "test_shelter.py::test_shelter_class_exists",
+  "test_shelter.py::test_can_instantiate_empty_shelter",
+  "test_shelter.py::test_enqueue_of_value_increases_len",
+  "test_shelter.py::test_enqueue_error",
+  "test_shelter.py::test_dequeue_returns",
+  "test_shelter.py::test_dequeue_head",
+  "test_shelter.py::test_dequeue_type_is_front"
+]
