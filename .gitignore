@@ -1,37 +1,118 @@
+Source: https://github.com/github/gitignore/blob/master/Python.gitignore
 
-challenges/array_shift/.pytest_cache/v/cache/lastfailed
-challenges/array_shift/.pytest_cache/v/cache/nodeids
-challenges/array_shift/.pytest_cache/README.md
+# User generated
+ENV/
+.vscode
+.idea
+.DS_Store
+# .configs
 
-challenges/array_binary_search/.vscode/settings.json
-challenges/array_binary_search/.pytest_cache/v/cache/nodeids
-challenges/array_binary_search/.pytest_cache/v/cache/lastfailed
-.vscode/settings.json
-data_structures/linked-list/.pytest_cache/v/cache/nodeids
-data_structures/linked-list/.pytest_cache/v/cache/lastfailed
-data_structures/linked-list/.pytest_cache/README.md
-data_structures/linked_list/.pytest_cache/v/cache/lastfailed
-data_structures/linked_list/.pytest_cache/v/cache/nodeids
-data_structures/linked_list/.pytest_cache/README.md
-data_structures/linked_list/.vscode/settings.json
-data_structures/linked_list/.vscode/launch.json
-challenges/array_binary_search/.pytest_cache/v/cache/lastfailed
-challenges/array_binary_search/.pytest_cache/v/cache/nodeids
-challenges/array_binary_search/.vscode/settings.json
-data_structures/linked_list/.pytest_cache/README.md
-data_structures/linked_list/.pytest_cache/v/cache/lastfailed
-data_structures/linked_list/.pytest_cache/v/cache/nodeids
-data_structures/linked_list/.vscode/launch.json
-data_structures/linked_list/.vscode/settings.json
 
-challenges/ll_merge/.pytest_cache/README.md
-challenges/ll_merge/.pytest_cache/v/cache/lastfailed
-challenges/ll_merge/.pytest_cache/v/cache/nodeids
-data_structures/queue/.pytest_cache/v/cache/nodeids
-data_structures/queue/.pytest_cache/v/cache/nodeids
-data_structures/queue/.pytest_cache/v/cache/nodeids
-data_structures/queue/.pytest_cache/v/cache/nodeids
-.pytest_cache/v/cache/nodeids
-challenges/queue_with_stacks/.pytest_cache/README.md
-challenges/queue_with_stacks/.pytest_cache/v/cache/nodeids
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
 
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+.static_storage/
+.media/
+local_settings.py
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+
+# data
+curriculum/class-06/API_NY.GDP.PCAP.CD_DS2_en_csv_v2.csv
