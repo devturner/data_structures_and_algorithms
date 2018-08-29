@@ -43,12 +43,8 @@ def test_enqueue_error(empty_shelter):
         empty_shelter.enqueue()
 
 
-# def test_default_value_of_top(empty_shelter):
-#     assert empty_shelter.front is None
-
-
 def test_dequeue_returns(small_shelter):
-    assert small_shelter.dequeue() == 'cat'
+    assert small_shelter.dequeue().type == 'cat'
 
 
 def test_dequeue_head(small_shelter):
@@ -57,8 +53,8 @@ def test_dequeue_head(small_shelter):
 
 
 def test_dequeue_type_is_front(small_shelter):
-    assert small_shelter.dequeue('cat') is 'cat'
+    assert small_shelter.dequeue('cat').type == 'cat'
 
 
-# def test_dequeue_type_not_front(small_shelter):
-#     small_shelter.dequeue('dog')
+def test_dequeue_type_not_front(small_shelter):
+    assert small_shelter.dequeue('dog').type == 'dog'
