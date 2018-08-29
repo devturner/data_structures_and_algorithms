@@ -44,25 +44,30 @@ class Animal_Shelter(object):
 
     def dequeue(self, pref=None):
         """removes & returns the animal at 
-            the front of the queue if no pref is give or
+            the front of the queue if no pref is given or
             returns the oldest pref if provided
         """
+        
         if pref is None:
             try:
                 old_front = self.front
                 self.front = old_front._next
                 self._length -= 1
                 # import pdb; pdb.set_trace()
-                return old_front.type
+                return old_front
+            
             except AttributeError:
                 print('The queue is empty')
-        elif pref == 'cat' or pref == 'dog':
+        
+        if pref == 'cat' or pref == 'dog':
             cur_animal = self.front
             if pref == cur_animal.type:
-                self.dequeue()
-
-            # while cur_animal._next.type != pref:
-            #     cur_animal = cur_animal._next
-            # output = cur_animal._next.__next
+                return self.dequeue()
+            
+            import pdb; pdb.set_trace()
+            while cur_animal.type != pref:
+                cur_animal = cur_animal._next
+            output = cur_animal
+            
         self._length -= 1
-        # return output
+        return output
