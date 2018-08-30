@@ -5,42 +5,56 @@ import pytest
 def test_multi_braket_validation_returns_true_happy_path():
     assert multi_braket_validation('this ( is ) good') == True
 
-# def test_multi_braket_validation_returns_false_happy_path():
-#     assert multi_braket_validation('this ( is bad') == False
 
-# def test_insertion_of_value_increases_len(empty_stack):
-#     assert len(empty_stack) == 0
-#     empty_stack.push(100)
-#     assert len(empty_stack) == 1
+def test_multi_braket_validation_returns_false_happy_path():
+    assert multi_braket_validation('this ( is bad') == False
 
 
-# def test_default_value_of_top(empty_stack):
-#     assert empty_stack.top is None
+def test_multi_braket_validation_returns_false_hard1_path():
+    assert multi_braket_validation(')t{h[is ( i]s bad') == False
 
 
-# def test_value_of_top_with_peek(small_stack):
-#     assert small_stack.peek().val != 3000
-#     assert small_stack.peek().val == 4
+def test_multi_braket_validation_returns_true_hard2_path():
+    assert multi_braket_validation('this is also good') == True
 
 
-# def test_length_of_small(small_stack):
-#     assert small_stack._length == 4
+def test_multi_braket_validation_returns_false_hard3_path():
+    assert multi_braket_validation('this i]s bad') == False
 
 
-# def test_push_empty():
-#     with pytest.raises(Exception):
-#         small_stack.push()
+def test_multi_braket_validation_returns_false_hard4_path():
+    assert multi_braket_validation('this is bad {{{{{((({{[[[') == False    
 
 
-# def test_pop_the_top(small_stack):
-#     small_stack.pop()
-#     assert small_stack._length == 3
+def test_example1():
+    assert multi_braket_validation('{}') == True
 
 
-# def test_pop_returns_tops_value(small_stack):
-#     assert small_stack.pop() == 4
+def test_example2():
+    assert multi_braket_validation('{}(){}') == True
 
 
-# def test_pop_on_empty(empty_stack):
-#     with pytest.raises(AttributeError):
-#         empty_stack.pop()
+def test_example3():
+    assert multi_braket_validation('()[[Extra Characters]]') == True
+
+
+def test_example4():
+    assert multi_braket_validation('(){}[[]]') == True
+
+
+def test_example5():
+    assert multi_braket_validation('{}{Code}[Times](())') == True
+
+
+def test_example6():
+    assert multi_braket_validation('[({}]') == False
+
+
+def test_example7():
+    assert multi_braket_validation('(](') == False
+
+
+def test_example8():
+    assert multi_braket_validation('{(})') == False
+
+
