@@ -15,7 +15,7 @@ class Stack(object):
             iterable = []
 
         for value in iterable:
-            self.insert(value)
+            self.push(value)
 
     def __str__(self):
         """ Return the string representation of a stack

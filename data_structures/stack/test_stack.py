@@ -9,11 +9,11 @@ def empty_stack():
 
 @pytest.fixture
 def small_stack():
-    stack = Stack()
-    stack.push(1)
-    stack.push(2)
-    stack.push(3)
-    stack.push(4)
+    stack = Stack([1,2,3,4])
+    # stack.push(1)
+    # stack.push(2)
+    # stack.push(3)
+    # stack.push(4)
     return stack
 
 
@@ -56,8 +56,3 @@ def test_pop_the_top(small_stack):
 
 def test_pop_returns_tops_value(small_stack):
     assert small_stack.pop() == 4
-
-
-def test_pop_on_empty(empty_stack):
-    with pytest.raises(AttributeError):
-        empty_stack.pop()

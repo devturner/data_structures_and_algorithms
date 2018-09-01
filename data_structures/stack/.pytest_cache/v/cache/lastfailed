@@ -1,1 +1,3 @@
-{}
+{
+  "test_stack.py::test_pop_on_empty": true
+}

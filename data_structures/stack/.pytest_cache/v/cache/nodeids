@@ -7,6 +7,5 @@
   "test_stack.py::test_length_of_small",
   "test_stack.py::test_push_empty",
   "test_stack.py::test_pop_the_top",
-  "test_stack.py::test_pop_returns_tops_value",
-  "test_stack.py::test_pop_on_empty"
+  "test_stack.py::test_pop_returns_tops_value"
 ]
