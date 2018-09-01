@@ -16,7 +16,7 @@ class Queue(object):
             iterable = []
 
         for value in iterable:
-            self.insert(value)
+            self.enqueue(value)
 
     def __str__(self):
         """ Return the string representation of a queue
