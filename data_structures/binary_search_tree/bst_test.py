@@ -56,4 +56,14 @@ def test_small_tree_insert_placements(small_tree):
     assert small_tree.root.left.left.left.value == 2
 
 
+def test_inorder_traversal():
+    bt = BinaryTree([20, 18, 12, 19, 11, 14, 40, 31, 22, 33])
+    expected = [11, 12, 14, 18, 19, 20, 22, 31, 33, 40]
+    actual = []
+    
+    def generate_list(node):
+        actual.append(node.value)
+
+    bt.in_order(generate_list)
+    assert expected == actual
 
