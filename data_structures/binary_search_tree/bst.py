@@ -85,7 +85,8 @@ class BinaryTree:
         current_node = self.root
         new_node = Node(value)
         while current_node:
-            # import pdb; pdb.set_trace()
+            if value == current_node.value:
+                raise ValueError('Value already in tree')
             if value < current_node.value:
                 if current_node.left is None:
                     current_node.left = new_node
@@ -98,7 +99,3 @@ class BinaryTree:
                     return self
                 else:
                     current_node = current_node.right
-            else: 
-                return('Value already in tree')
-    
-        
