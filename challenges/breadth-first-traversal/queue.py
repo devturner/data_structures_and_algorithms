@@ -1,4 +1,4 @@
-from .node import Node
+from node import Queue_Node
 
 
 class Queue(object):
@@ -36,7 +36,7 @@ class Queue(object):
     def enqueue(self, value):
         """takes any value as an argument and adds that value to the back of the queue
         """
-        new_node = Node(value)
+        new_node = Queue_Node(value)
         if self.front is None:
             self.front = new_node
         else:
