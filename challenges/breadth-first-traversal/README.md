@@ -47,3 +47,12 @@ Curly Brackets : `{}`
 
 ## Solution
 ![Whiteboard Image](../../assets/brakets.jpeg)
+
+# Breadth Traverse a Tree
+Given a tree, traverse it via its breadth (going level by level) and print the nodes values in that order. 
+
+## Challenge
+Your function should take a tree as its only argument, and should print the values of ech node on each level from left to right.
+
+## Solution
+![Whiteboard Image](../../assets/breadth.jpg)

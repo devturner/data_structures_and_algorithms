@@ -1,21 +1,22 @@
-from queue import Queue
-
-
 
 def breadth_first_traversal(g_tree):
-    qt = Queue()
-    ret_list = []
+
     if g_tree.root is None:
         return
     
-    qt.enqueue(g_tree.root)
+    queue = []
+    ret_list = []
 
-    while qt._length > 0:
-        # import pdb; pdb.set_trace()
-        if g_tree.root.left:
-            qt.enqueue(g_tree.root.left)
-        if g_tree.root.right:
-            qt.enqueue(g_tree.root.right)
-        ret_list.append(qt.dequeue)
-    
+    queue.append(g_tree.root)
+
+    while (len(queue) > 0):
+        
+        root = queue.pop(0)
+        ret_list.append(root.value)
+        print(root.value)
+        if root.left:
+            queue.append(root.left)
+        if root.right:
+            queue.append(root.right)
+
     return ret_list
