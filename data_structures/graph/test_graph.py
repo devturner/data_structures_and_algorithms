@@ -1,0 +1,66 @@
+import pytest
+from .graph import Graph
+
+
+@pytest.fixture()
+def graph_empty():
+    g = Graph()
+    return g
+
+
+@pytest.fixture()
+def graph_filled():
+    g = Graph()
+    g.graph = {
+        'A': {'B': 10},
+        'B': {'A': 5, 'D': 15, 'C': 20},
+        'C': {},
+        'D': {'A': 5},
+        'E': {},
+        'F': {}
+    }
+    return g
+
+
+@pytest.fixture()
+def graph_filled_for_traversal():
+    g = Graph()
+    g.graph = {
+        'A': {'B': 10, 'C': 15},
+        'B': {'D': 15, 'E': 5, 'C': 2},
+        'C': {'F': 50, 'G': 25},
+        'D': {},
+        'E': {'C': 5},
+        'F': {'E': 10},
+        'G': {'F': 20}
+    }
+    return g
+
+
+def test_class_exists():
+    assert Graph
+
+
+def test_can_instantiate_empty_graph(graph_empty):
+    assert isinstance(graph_empty, Graph)
+
+
+def test_full_graph(graph_filled_for_traversal):
+    assert len(graph_filled_for_traversal) == 7
+
+
+def test_add_vert_to_graph(graph_empty):
+    assert len(graph_empty) == 0
+    graph_empty.add_vert('t')
+    assert len(graph_empty) == 1
+
+
+def test_add_edge_to_graph(graph_filled_for_traversal):
+    graph_filled_for_traversal.add_edge('D', 'A', 30)
+    assert graph_filled_for_traversal.graph['D'] == {'A': 30}
+
+
+def test_get_neighbors(graph_filled_for_traversal):
+    # import pdb; pdb.set_trace()
+    assert graph_filled_for_traversal.get_neighbors('E') == ['C'] 
+    assert graph_filled_for_traversal.get_neighbors('B') == ['D', 'E', 'C'] 
