@@ -55,12 +55,31 @@ def test_add_vert_to_graph(graph_empty):
     assert len(graph_empty) == 1
 
 
+def test_add_vert_to_graph_already_in(graph_empty):
+    graph_empty.add_vert('t')
+    assert len(graph_empty) == 1
+    graph_empty.add_vert('t')
+    assert len(graph_empty) == 1
+
+
+def test_add_vert_to_graph_not_there(graph_empty):
+    with pytest.raises(Exception):
+        graph_empty.add_vert()
+
+
 def test_add_edge_to_graph(graph_filled_for_traversal):
     graph_filled_for_traversal.add_edge('D', 'A', 30)
     assert graph_filled_for_traversal.graph['D'] == {'A': 30}
 
 
+def test_add_edge_to_graph_not_there(graph_filled_for_traversal):
+    with pytest.raises(Exception):
+        graph_filled_for_traversal.add_edge('S', 'A', 30)
+    
+
 def test_get_neighbors(graph_filled_for_traversal):
-    # import pdb; pdb.set_trace()
     assert graph_filled_for_traversal.get_neighbors('E') == ['C'] 
-    assert graph_filled_for_traversal.get_neighbors('B') == ['D', 'E', 'C'] 
+    assert graph_filled_for_traversal.get_neighbors('B') == ['D', 'E', 'C']
+
+
+

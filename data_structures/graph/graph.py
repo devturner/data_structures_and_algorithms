@@ -3,10 +3,10 @@ class Graph:
         self.graph = {}
 
     def __repr__(self):
-        pass
+        return f'<Graph Length: {self._length}>'
 
     def __str__(self):
-        pass
+        return f' Graph Length: {self._length}'
 
     def __len__(self):
         return len(self.graph)
