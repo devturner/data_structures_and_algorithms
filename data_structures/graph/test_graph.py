@@ -72,9 +72,8 @@ def test_add_edge_to_graph(graph_filled_for_traversal):
     assert graph_filled_for_traversal.graph['D'] == {'A': 30}
 
 
-def test_add_edge_to_graph_not_there(graph_filled_for_traversal):
-    with pytest.raises(Exception):
-        graph_filled_for_traversal.add_edge('S', 'A', 30)
+def test_add_edge_to_graph_not_there(graph_filled_for_traversal):    
+    graph_filled_for_traversal.add_edge('S', 'A', 30) == 'That key is not in the graph'
     
 
 def test_get_neighbors(graph_filled_for_traversal):

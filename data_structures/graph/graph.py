@@ -30,11 +30,12 @@ class Graph:
     def add_edge(self, v1, v2, weight):
         """ add a relationship and weight between two verts
         """
-        
-        if v2 not in self.graph[v1]:
-            self.graph[v1].update({v2: weight})
-        else:
-            return "That value already exsists"
+        if self.has_vert(v1):
+            if v2 not in self.graph[v1]:
+                self.graph[v1].update({v2: weight})
+            else:
+                return "That value already exsists"
+        return 'That key is not in the graph'
 
     def get_neighbors(self, val):
         """ Given a val (key), return all all adjacent verts
