@@ -46,3 +46,17 @@ class Graph:
                 neighbors.append(keys)
             return neighbors
         return "Value is not in graph"
+
+    def bft(self, s):
+        """This uses breadth first to tavel a graph and returns the entiriety of it
+        """
+        contents = []
+        def _walk(s):
+            connections = self.get_neighbors(s)
+            for connection in connections:
+                if connection not in contents:
+                    contents.append(connection)
+                    _walk(connection)
+        contents.append(s)
+        _walk(s)
+        return contents
