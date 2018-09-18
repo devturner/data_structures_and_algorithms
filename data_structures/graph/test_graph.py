@@ -81,4 +81,19 @@ def test_get_neighbors(graph_filled_for_traversal):
     assert graph_filled_for_traversal.get_neighbors('B') == ['D', 'E', 'C']
 
 
+def test_bft_happy(graph_filled_for_traversal):
+    actual = graph_filled_for_traversal.bft('A')
+    expected = ['A', 'B', 'D', 'E', 'C', 'F', 'G']
+    assert actual == expected
+    
 
+def test_bft_happy_other_start(graph_filled_for_traversal):
+    actual = graph_filled_for_traversal.bft('F')
+    expected = ['F', 'E', 'C', 'G']
+    assert actual == expected
+
+
+def test_bft_happy_other_starts(graph_filled_for_traversal):
+    actual = graph_filled_for_traversal.bft('D')
+    expected = ['D']
+    assert actual == expected
