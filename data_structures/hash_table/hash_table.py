@@ -1,4 +1,3 @@
-from ..linked_list import LinkedList
 
 class HashTable:
     """A class for a hash table."""
@@ -7,10 +6,10 @@ class HashTable:
 
     def __init__(self, size=8192):
         self.table_size = size
-        self.hashtable = []
+        self.hashtable = [None] * self.table_size
 
     def __repr__(self):
-        pass
+        return(f'Hashtable: {self.entries_count}')
 
     def _hash_key(self, key):
         """Create a hash from a given key.
@@ -30,32 +29,40 @@ class HashTable:
             key: the key to store
             value: the value to store
         """
-        key = self._hash_key(key)
-        self.entries_count += 1
-        if key in self.hashtable:
-            llist = LinkedList
-            llist.append(value)
-            self.hashtable[key].append(llist)
+        hash_key = self._hash_key(key)
+        key_val = [key, value]
+        if self.hashtable[hash_key] is None:
+            self.hashtable[hash_key] = [key_val]
+            self.entries_count += 1
         else:
-            self.hashtable.append(key, value)
+            for item in self.hashtable[hash_key]:
+                if item[0] == key:
+                    item.append(value)
+                    return "Added the value"
+            self.hashtable[hash_key].append(key_val)
 
     def get(self, key):
         """Retrieve a value from the hash table by key.
         args:
             key: a string to find the value in the hash table
-        returns: the value stored with the key
+        returns: the values stored with the key
         """
-        key = self._hash_key(key)
-        if key in self.hashtable:
-            return self.hashtable[key]
-        return "Key not in the hash table"
+        hash_key = self._hash_key(key)
+        if self.hashtable[hash_key]:
+            return self.hashtable[hash_key]
+        return "Key not found"
 
     def remove(self, key):
         """Retrieve and remove a value from the hash table by key.
         args:
             key: a string to find the value in the hash table
-        returns: the value stored with the key
+        returns: the values stored with the key
         """
-        key = self._hash_key(key)
-        self.entries_count -= 1
-        return self.hashtable.pop(key)
+        hash_key = self._hash_key(key)
+
+        if self.hashtable[hash_key] is None:
+            return('Key not found')
+        for i in range(0, len(self.hashtable[hash_key])):
+            if self.hashtable[hash_key][i][0] == key:
+                self.entries_count -= 1
+                return self.hashtable[hash_key].pop(i)
