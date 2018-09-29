@@ -4,3 +4,6 @@
 01. Data Structure Challenge [Array Shift](challenges/array_shift)
 
 02. Array Binary Search [Array Binary Search](challenges/array_binary_search)
+
+03. Sorting Algorithms 
+ -[Selection Sort](sorting_algos/selection)
