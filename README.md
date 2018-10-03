@@ -7,5 +7,8 @@
 
 03. Sorting Algorithms 
  -[Selection Sort](sorting_algos/selection)
+ 
  -[Merge Sort](sorting_algos/merge):
     ![Whiteboard Image](/assets/merge_sort.jpg)
+-[Quick Sort](sorting_algos/merge):
+    ![Whiteboard Image](/assets/quick_sort.jpg)
