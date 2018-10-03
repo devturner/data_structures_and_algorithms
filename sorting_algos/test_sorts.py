@@ -1,6 +1,7 @@
 from .selection import selection_sort
 from .merge import merge_sort
 from .quicksort import quicksort
+from .redix_sort import redix_sort
 from random import shuffle
 import pytest
 
@@ -86,4 +87,19 @@ def test_sorts_list_of_duplicates_quick_sort():
     unsorted = [4, 4, 5, 3, 2, 3, 4, 3, 4, 5]
     expected = [2, 3, 3, 3, 4, 4, 4, 4, 5, 5]
     now_sorted = quicksort(unsorted, 0, len(unsorted) - 1)
+    assert expected == now_sorted
+
+
+def test_shuffled_list_gets_redix_sort():
+    expected = [num for num in range(20)]
+    unsorted = expected[:]
+    shuffle(unsorted)
+    now_sorted = redix_sort(unsorted)
+    assert expected == now_sorted
+
+
+def test_sorts_list_of_duplicates_redix_sort():
+    unsorted = [4, 4, 5, 3, 2, 3, 4, 3, 4, 5]
+    expected = [2, 3, 3, 3, 4, 4, 4, 4, 5, 5]
+    now_sorted = redix_sort(unsorted)
     assert expected == now_sorted
